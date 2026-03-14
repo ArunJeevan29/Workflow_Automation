@@ -6,6 +6,8 @@ const connectDB = require('./src/config/db');
 const { errorHandler } = require('./src/middleware/errorHandler');
 
 const workflowRoutes = require('./src/routes/workflowRoutes');
+const stepRoutes = require('./src/routes/stepRoutes');
+const ruleRoutes = require('./src/routes/ruleRoutes');
 
 const app = express();
 
@@ -18,7 +20,13 @@ app.get('/health', (req, res) => {
   res.status(200).json({ status: 'success', message: 'Halleyx Workflow Engine API is running' });
 });
 
+app.use('/api/workflows/:workflow_id/steps', stepRoutes);
 app.use('/api/workflows', workflowRoutes);
+
+app.use('/api/steps/:step_id/rules', ruleRoutes);
+app.use('/api/steps', stepRoutes);
+
+app.use('/api/rules', ruleRoutes);
 
 app.use(errorHandler);
 

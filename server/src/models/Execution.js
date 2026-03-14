@@ -11,7 +11,7 @@ const stepLogSchema = new mongoose.Schema({
   selected_next_step: { type: String, default: null },
   status: { type: String, enum: ['completed', 'failed'], required: true },
   approver_id: { type: String, default: null },
-  error_message: { type: String, default: null }
+  error_message: { type: String, default: null },
   started_at: { type: Date, required: true },
   ended_at: { type: Date, required: true }
 }, { _id: false });
