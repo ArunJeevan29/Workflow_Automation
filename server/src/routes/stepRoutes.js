@@ -1,10 +1,6 @@
-const express = require('express')
-// If you try to access req.params.workflow_id inside your createStep controller without mergeParams, it will be undefined. 
-// Your backend won't know which workflow to attach the step to, and the request will fail.
-// You are explicitly telling Express: "Hey, take all the parameters from the parent route (like :workflow_id) and merge them into this router so I can use them."
-// It successfully grabs the ID from the URL, finds the correct workflow in the database, and saves the step exactly where it belongs.
-const router = express.Router({ mergeParams: true});
-
+// server/src/routes/stepRoutes.js
+const express = require('express');
+const router = express.Router({ mergeParams: true }); // Crucial for reading :workflow_id from parent route
 const {
   createStep,
   getStepsByWorkflow,
@@ -12,12 +8,15 @@ const {
   deleteStep
 } = require('../controllers/stepController');
 
+// Routes mounted at /api/workflows/:workflow_id/steps
 router.route('/')
-    .post(createStep)
-    .get(getStepsByWorkflow);
+  .post(createStep)
+  .get(getStepsByWorkflow);
 
+// Routes mounted at /api/steps
+// (We will map this directly in server.js)
 router.route('/:id')
-    .put(updateStep)
-    .delete(deleteStep);
+  .put(updateStep)
+  .delete(deleteStep);
 
 module.exports = router;

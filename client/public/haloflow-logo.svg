@@ -1,0 +1,35 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="256" cy="256" r="240" fill="url(#gradient1)"/>
+  
+  <!-- Inner Glow -->
+  <circle cx="256" cy="256" r="180" fill="url(#gradient2)" opacity="0.3"/>
+  
+  <!-- Flow Lines -->
+  <path d="M160 200 Q256 140 352 200" stroke="white" stroke-width="12" stroke-linecap="round" fill="none" opacity="0.9"/>
+  <path d="M140 256 Q256 180 372 256" stroke="white" stroke-width="14" stroke-linecap="round" fill="none" opacity="0.95"/>
+  <path d="M160 312 Q256 252 352 312" stroke="white" stroke-width="12" stroke-linecap="round" fill="none" opacity="0.9"/>
+  
+  <!-- Halo Ring -->
+  <circle cx="256" cy="256" r="140" stroke="white" stroke-width="4" fill="none" opacity="0.4" stroke-dasharray="20 10"/>
+  
+  <!-- Center Dot -->
+  <circle cx="256" cy="256" r="20" fill="white" opacity="0.8"/>
+  
+  <!-- Sparkle Accents -->
+  <path d="M380 120 L390 140 L410 150 L390 160 L380 180 L370 160 L350 150 L370 140 Z" fill="white" opacity="0.7"/>
+  <path d="M132 340 L138 352 L150 358 L138 364 L132 376 L126 364 L114 358 L126 352 Z" fill="white" opacity="0.6"/>
+  
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="gradient1" x1="0" y1="0" x2="512" y2="512">
+      <stop offset="0%" stop-color="#2c5364"/>
+      <stop offset="50%" stop-color="#203a43"/>
+      <stop offset="100%" stop-color="#0f2027"/>
+    </linearGradient>
+    <linearGradient id="gradient2" x1="256" y1="76" x2="256" y2="436">
+      <stop offset="0%" stop-color="#58bfa1"/>
+      <stop offset="100%" stop-color="#58bfa1" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+</svg>
