@@ -6,6 +6,7 @@ import api from '../../utils/axios';
 import { useAuth } from '../../context/AuthContext';
 import Button from '../../components/Button';
 
+// TODO: Consider adding pagination for approvals if list grows large
 export default function AdminApprovals() {
   const { user } = useAuth();
   const { showAlert } = useAlert();
