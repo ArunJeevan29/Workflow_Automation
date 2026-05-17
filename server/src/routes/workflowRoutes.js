@@ -1,4 +1,3 @@
-// server/src/routes/workflowRoutes.js
 const express = require('express');
 const router = express.Router();
 const {
@@ -9,13 +8,10 @@ const {
   deleteWorkflow
 } = require('../controllers/workflowController');
 
-router.route('/')
-  .post(createWorkflow)
-  .get(getWorkflows);
-
-router.route('/:id')
-  .get(getWorkflowById)
-  .put(updateWorkflow)
-  .delete(deleteWorkflow);
+router.post('/', createWorkflow);
+router.get('/', getWorkflows);
+router.get('/:id', getWorkflowById);
+router.put('/:id', updateWorkflow);
+router.delete('/:id', deleteWorkflow);
 
 module.exports = router;

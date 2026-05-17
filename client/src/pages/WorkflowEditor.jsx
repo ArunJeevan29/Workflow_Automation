@@ -95,7 +95,7 @@ export default function WorkflowEditor() {
     try {
       setIsSaving(true);
       if (isNew) {
-        await api.post('/workflows', payload);
+        await api.post('/workflows', payload);  
         showAlert('success', 'Workflow created successfully!');
       } else {
         await api.put(`/workflows/${id}`, payload);

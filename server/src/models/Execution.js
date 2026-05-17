@@ -9,7 +9,6 @@ const stepLogSchema = new mongoose.Schema({
     result: { type: Boolean }
   }],
   selected_next_step: { type: String, default: null },
-  // Allow all states the engine may write
   status: {
     type: String,
     enum: ['completed', 'failed', 'pending_approval'],
@@ -18,7 +17,7 @@ const stepLogSchema = new mongoose.Schema({
   approver_id: { type: String, default: null },
   error_message: { type: String, default: null },
   started_at: { type: Date, required: true },
-  ended_at: { type: Date, default: null }  // null is valid for in-progress steps
+  ended_at: { type: Date, default: null }
 }, { _id: false });
 
 const executionSchema = new mongoose.Schema({
